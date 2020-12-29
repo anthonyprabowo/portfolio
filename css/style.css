@@ -206,11 +206,17 @@ section:before {
     text-align: center;
 }
 
-.overlay > .btn {
+.overlay > .btn,
+.overlay > a {
     margin-top: 50px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+}
+
+a > .btn {
+    margin: 0;
 }
 
 .modal-body {
@@ -315,4 +321,38 @@ section:before {
 } 
 @keyframes come-in {
     to { transform: translateY(0); opacity: 1;}
+}
+
+/* 
+    MEDIA QUERIES
+*/
+
+@media (min-width: 1024px) {
+    #about {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-top: 60px;
+    }
+
+    .about-title {
+        width: 100%;
+    }
+
+    .pic {
+        display: inline-block;
+        text-align: right;
+        margin: 20px 50px;
+        width: 40%;
+    }
+
+    .pic > img {
+        width: 400px;
+        height: 500px;
+    }
+
+    .about-paragraph {
+        display: inline-block;
+        width: 40%;
+    }
 }
