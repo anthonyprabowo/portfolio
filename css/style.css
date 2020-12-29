@@ -1,20 +1,28 @@
 /* Main style */
+body {
+    position: relative;
+}
+
 h3 {
     margin: 0;
 }
 
-img {
-    display: none;
-}
-
 section:before {
-    height: 60px;
+    height: 70px;
     content: "";
     display:block;
 }
 
 /* MAIN PAGE SECTION */
 
+.navbar {
+    background-color: rgb(84,84,84);
+}
+
+.navbar-nav {
+    justify-content: flex-end;
+    flex-grow: 1;
+}
 
 #particles-js {
     height: 100vh;
@@ -43,7 +51,7 @@ section:before {
     width: 100%;
     text-align: center;
     position: absolute;
-    top: 100px;
+    top: 200px;
 }
 
 .btn {
@@ -56,7 +64,7 @@ section:before {
 
 .button-main {
     position: absolute;
-    top: 250px;
+    top: 400px;
     margin-top: 5%;
     text-align: center;
     left: 0;
@@ -91,8 +99,13 @@ section:before {
 /* ABOUT SECTION */
 
 #about {
-    height: 100vh;
     background-color: #ececec;
+    padding-bottom: 10px;
+}
+
+.module > h2 {
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .pic > img {
@@ -117,8 +130,174 @@ section:before {
     margin: 30px 20px;
 }
 
+/* SKILLS */
+
+#skills {
+    background-color: #f9f4f4;
+}
+
+.skill {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.logo {
+    height: 200px;
+    width: 200px;
+    margin: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.2);
+}
+
+.skill > p {
+   margin: 20px auto; 
+}
+
+/* Portfolio */
+
+#portfolio {
+    background-color: #f7f7f7
+}
+
+.col {
+    position: relative;
+    padding: 0;
+    text-align: center;
+    justify-content: center;
+}
+
+.project {
+    width: 300px;
+    height: 500px;
+    margin: 20px 0;
+    border: solid 1px black;
+}
+
+.overlay,
+.overlay-modal {
+    width: 300px;
+    height: 500px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    background-color: rgba(0,0,0,0.7);
+    margin: 0 auto;
+}
+
+.overlay:hover,
+.overlay-modal:hover {
+    opacity: 1;
+}
+
+.overlay-modal {
+    width: 450px;
+    height: 800px;
+}
+
+.info {
+    margin-top: 100px;
+    color: white;
+    text-align: center;
+}
+
+.overlay > .btn {
+    margin-top: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal-body {
+    text-align: center;
+}
+
+.modal-body > p {
+    text-align: left;
+}
+
+.project-minified {
+    width: 250px;
+    height: 450px;
+    
+}
+
+/* Contact */
+
+.contact-p {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.facebook,
+.youtube,
+.github,
+.twitter {
+    display: inline-block;
+    background-color: #3B5998;
+    height: 60px;
+    width: 80px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 20px 0 ;
+}
+
+.youtube {
+    background-color: #FF0000;
+}
+
+.github {
+    background-color: black;
+}
+
+.twitter {
+    background-color: #55ACEE;
+}
+
+.facebook > img,
+.youtube > img,
+.github > img,
+.twitter > img {
+    width: 30px;
+    height: 30px;
+    margin-top: 15px;
+}
+
+.email {
+    text-align: center;
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+/* Footer */
+
+.footer {
+    height: 50px;
+    background-color: rgb(84,84,84);
+    color: white;
+}
+
+.footer-name {
+    justify-content: left;
+    flex-grow: 1;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.rights {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
 /* Slide In Effect */
 .come-in {
+    position: relative;
+    z-index: 1;
     transform: translateY(150px);
     opacity: 0;
     animation: come-in 0.8s ease forwards;
@@ -126,16 +305,6 @@ section:before {
 .come-in:nth-child(odd) {
     animation-duration: 0.6s; /* So they look staggered */
 }
-
-.come-out {
-    transform: translateY(0px);
-    animation: come-out 0.8s ease forwards;
-}
-
-.come-in:nth-child(odd) {
-    animation-duration: 0.6s; /* So they look staggered */
-}
-
 /* 
     ANIMATION
 */
@@ -146,7 +315,4 @@ section:before {
 } 
 @keyframes come-in {
     to { transform: translateY(0); opacity: 1;}
-}
-@keyframes come-out {
-    to { transform: translateY(150px); opacity: 0;}
 }
